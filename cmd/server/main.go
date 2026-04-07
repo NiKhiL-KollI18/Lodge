@@ -1,7 +1,7 @@
 package main
 
 import (
-	"LODGE/lib/lodge"
+	"LODGE/lib"
 	"log"
 	"net/http"
 	"os"
@@ -9,10 +9,10 @@ import (
 )
 
 func main() {
-	roomService := lodge.DeployRoomService(60*time.Second, 10*60*time.Second, 30*time.Second)
+	roomService := lib.DeployRoomService(60*time.Second, 10*60*time.Second, 0, 30*time.Second)
 	roomService.Start()
 
-	http.HandleFunc("/signal", lodge.Waitress)
+	http.HandleFunc("/signal", lib.Waitress)
 
 	port := os.Getenv("PORT")
 	if port == "" {
