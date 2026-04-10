@@ -17,7 +17,7 @@ var (
 const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
 func GenerateRoomID(length int) string {
-	seedRand := rand.New(rand.newSource(time.Now().UnixNano()))
+	seedRand := rand.New(rand.NewSource(time.Now().UnixNano()))
 	b := make([]byte, length)
 	for i := range b {
 		b[i] = charset[seedRand.Intn(len(charset))]
