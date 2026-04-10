@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	roomService := lib.DeployRoomService(60*time.Second, 10*60*time.Second, 0, 30*time.Second)
+	roomService := lib.DeployRoomService(3*60*time.Second, 10*60*time.Second, 0, 30*time.Second)
 	roomService.Start()
 
 	http.HandleFunc("/signal", lib.Waitress)
