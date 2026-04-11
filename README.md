@@ -150,7 +150,7 @@ Response:
 
 ```json
 {
-  "type": "room created",
+  "type": "room_created",
   "room_id": "XfRs12"
 }
 ```
@@ -191,6 +191,13 @@ Room not found:
 Success:
 
 * HTTP Status: `200 OK`
+
+* and to other peers :
+```json
+{
+    "type" : "peer_connected"
+}
+```
 
 ---
 
